@@ -1,0 +1,9 @@
+th{
+text-align: center
+}
+th, td{
+    padding:15 px;
+}
+table{
+    border-spacing: 5px;
+}

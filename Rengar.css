@@ -1,0 +1,13 @@
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    text-align: center;
+}
+li{
+    font-size=14;
+    font-style: oblique;
+    color:red;
+    
+}

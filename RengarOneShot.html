@@ -1,3 +1,57 @@
 <!doctype html>
 <html lang="en-US">
 </html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head><link rel="stylesheet" href="RengarOneShot.css"> </head>
+
+    <link rel="stylesheet" href="RengarOneShot.css"> 
+
+<title> OneShot?</title>
+
+<header style="text-align:center;color:#660066; font-size:48px;" >Hi, Which Champions Do You Think Rengar Can One Shot?</header>
+
+<h1 style="text-align:center; font-size:24px;"><u> Basic Rengar Stats</u></h1>
+<h2 id="Damages" style="text-align:center; font-size:14px;">token</h2>
+<script id="RengarStats">
+var Rengar = {
+ad:111,
+QDmg:"150+1.2AD", 
+EQDmg:"240+1.5AD", 
+WDmg:"170+0.8AP", 
+EWDmg:"250+0.8AP", 
+EDmg:"250+0.7bonusAD", 
+EEDmg:"340+0.7bonusAD",
+HDmg:"1.0AD" 
+ };
+document.getElementById("Damages").innerHTML = "AD at level 18:" + Rengar.ad + "<br>"+  "Empowered Q " + Rengar.EQDmg + "<br>" + " +W " + Rengar.WDmg + "<br>" + "+E " +  Rengar.EDmg + "<br>" +" +Hydra " + Rengar.HDmg;
+</script>
+
+<select autofocus  size id="selectADC" onchange="changeFunc()">
+    <option value = "Vayne" >Vayne</option>
+    <option value = "Kalista">Kalista</option>
+    <option value = "Graves">Graves</option>
+    <option value = "Ashe">Ashe</option>
+    <option value = "Jinx">Jinx</option>
+    <option value = "Tristana">Tristana</option>
+    <option value = "Sivir">Sivir</option>
+    <option value = "Corki">Corki</option>
+    <option  selected value = "Robert">Robert</option>
+</select>
+
+<p id="stats"></p>
+
+<script>
+function changeFunc() {
+    var x = document.getElementById("selectADC").value ;
+    document.getElementById("stats").innerHTML =  x;
+}
+</script>
+
+
+
+
+
+
+
+<script src="RengarOneShot.js" type="text/javascript"></script>

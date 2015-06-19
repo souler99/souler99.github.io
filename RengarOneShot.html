@@ -12,7 +12,7 @@
 <header style="text-align:center;color:#660066; font-size:48px;" >Hi, Which Champions Do You Think Rengar Can One Shot?</header>
 
 <h1 style="text-align:center; font-size:24px;"><u> Basic Rengar Stats</u></h1>
-<h2 id="Damages" style="text-align:center; font-size:14px;">token</h2>
+<h2 id="Damages" style="text-align:center; font-size:20px;">token</h2>
 <script id="RengarStats">
 var Rengar = {
 ad:111,
@@ -24,10 +24,12 @@ EDmg:"250+0.7bonusAD",
 EEDmg:"340+0.7bonusAD",
 HDmg:"1.0AD" 
  };
-document.getElementById("Damages").innerHTML = "AD at level 18:" + Rengar.ad + "<br>"+  "Empowered Q " + Rengar.EQDmg + "<br>" + " +W " + Rengar.WDmg + "<br>" + "+E " +  Rengar.EDmg + "<br>" +" +Hydra " + Rengar.HDmg;
+ document.getElementById("Damages").innerHTML = "AD at level 18:" + Rengar.ad + "<br>"+  "Empowered Q " + Rengar.EQDmg + "<br>" + " +W " + Rengar.WDmg + "<br>" + "+E " +  Rengar.EDmg + "<br>" +" +Hydra " + Rengar.HDmg;
 </script>
 
-<select autofocus  size id="selectADC" onchange="changeFunc()">
+<! this is for the ad carries>
+<h1 id="selectADCTitle" ><u>Select Your AD Carry</u></h1>
+<select id="selectADC" onchange="changeFunc()" autofocus size>
     <option value = "Vayne" >Vayne</option>
     <option value = "Kalista">Kalista</option>
     <option value = "Graves">Graves</option>
@@ -44,10 +46,56 @@ document.getElementById("Damages").innerHTML = "AD at level 18:" + Rengar.ad + "
 <script>
 function changeFunc() {
     var x = document.getElementById("selectADC").value ;
-    document.getElementById("stats").innerHTML =  x;
+    document.getElementById("stats").innerHTML = "YOU HAVE SELECTED: " + x + " TO DIE!";
 }
 </script>
 
+
+<! this is for ad items>
+<h1 id="ADItemsTitle"><u>Select Your Items</u></h1>
+<select id="ADItems" onchange="changeADItems()" >
+    <option value = "B.F Sword">B.F. Sword</option>
+    <option value = "Bilgewater Cutlass">Bilgewater Cutlass</option>
+    <option value = "Doran's Blade">Doran's Blade</option>
+    <option value = "Elixir of Wrath">Elixir of Wrath</option>
+    <option value = "Entropy">Entropy</option>
+    <option value = "Essence Reaver">Essence Reaver</option>
+    <option value = "Frozen Mallet">Frozen Mallet</option>
+    <option value = "Guinsoo's Rageblade">Guinsoo's Rageblade</option>
+    <option value = "Hexdrinker">Hexdrinker</option>
+    <option value = "Hextech Gunblade">Hextech Gunblade</option>
+    <option value = "Infinity Edge">Infinity Edge</option>
+    <option value = "Last Whisper">Last Whisper</option>
+    <option value = "Long Sword">Long Sword</option>
+    <option value = "Manamune">Manamune</option>
+    <option value = "Maw of Malmortius">Maw of Malmortius</option>
+    <option value = "Mercurial Scimitar">Mercurial Scimitar</option>
+    <option value = "Phage">Phage</option>
+    <option value = "Pickaxxe">Pickaxe</option>
+    <option value = "Ravenous Hydra">Ravenous Hydra</option>
+    <option value = "Sword of the Occult">Sword of the Occult (max stacks)</option>
+    <option value = "The Black Cleaver">The Black Cleaver</option>
+    <option value = "The Bloodthirster">The Bloodthirster</option>
+    <option value = "Tiamat">Tiamat</option>
+    <option value="Trinity Force">Trinity Force</option>
+    <option value="Vampiric Scepter">Vampiric Scepter</option>
+    <option value="Warrior">Warrior</option>       
+    <option value="Youmuu's Ghostblade">Youmuu's Ghostblade</option>
+    <option value="Zeke's Herald">Zeke's Herald</option>
+    <option value="Zephyr">Zephyr</option>
+    <option value = "Robert's Salt Mine" selected>Robert's Salt Mine</option>
+</select>
+
+<p id="ADstats" font-size:20px></p>
+<script>
+function changeADItems() {
+    var x = document.getElementById("ADItems").value ;
+    document.getElementById("ADstats").innerHTML = "You have selected:"+  x;
+}
+</script>
+
+<! this is where you input rengar and the enemys level>
+<h1 id="selectLevelTitle"><u>Select Your and the ADC's Level</u></h1>
 
 
 

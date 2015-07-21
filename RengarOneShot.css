@@ -1,8 +1,10 @@
 
-html{
-    height:100%;
-    background-color: deepskyblue ;
-    background-size:cover;
+body#background {
+  background: url(http://imgur.com/AzAvpyg) no-repeat 50% 50% fixed deepskyblue; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
 }
 #RengarStats{
     text-align: center;
@@ -10,6 +12,5 @@ html{
 }
 #selectADC{
     width:120px ;
-    height:24px ;
 }
 

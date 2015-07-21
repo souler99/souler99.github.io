@@ -6,7 +6,7 @@
 <head><link rel="stylesheet" href="RengarOneShot.css"> </head>
 
     <link rel="stylesheet" href="RengarOneShot.css"> 
-
+<body id="background">
 <title> OneShot?</title>
 
 <header style="text-align:center;color:#660066; font-size:48px;" >Hi, Which Champions Do You Think Rengar Can One Shot?</header>
@@ -28,76 +28,162 @@ HDmg:"1.0AD"
 </script>
 
 <! this is for the ad carries>
-<h1 id="selectADCTitle" ><u>Select Your AD Carry</u></h1>
-<select id="selectADC" onchange="changeFunc()" autofocus size>
-    <option value = "Vayne" >Vayne</option>
-    <option value = "Kalista">Kalista</option>
-    <option value = "Graves">Graves</option>
-    <option value = "Ashe">Ashe</option>
-    <option value = "Jinx">Jinx</option>
-    <option value = "Tristana">Tristana</option>
-    <option value = "Sivir">Sivir</option>
-    <option value = "Corki">Corki</option>
-    <option  selected value = "Robert">Robert</option>
-</select>
+<h1 id="selectADCTitle" ><u>Select Your AD Carry to Get Killed!</u></h1>
+<form > 
+    <select id="selectADC">
+    <option value = "Vayne" >Vayne
+    </option>
+    <option value = "Kalista" >Kalista
+    </option>
+    <option value = "Graves" >Graves
+    </option>
+    <option value = "Ashe" >Ashe
+    </option>
+    <option value = "Jinx" >Jinx
+    </option>
+    <option value = "Tristana" >Tristana
+    </option>
+    <option value = "Sivir" >Sivir
+    </option>
+    <option value = "Corki" >Corki
+    </option>
+    <option checked value = "Robert" >Robert
+    </option>
+    </select>
+     <input type="button" onclick="resetFunc()" value="Reset">
+    <input type="button" onclick="changeFunc()" value="Select">
+
+</form>
+<br>
 
 <p id="stats"></p>
 
 <script>
+    function resetFunc() {
+        document.getElementById("selectADC").reset() ;
+    }
+</script>
+
+<script>
 function changeFunc() {
-    var x = document.getElementById("selectADC").value ;
-    document.getElementById("stats").innerHTML = "YOU HAVE SELECTED: " + x + " TO DIE!";
+    var x = document.getElementById("selectADC") ;
+document.getElementById("stats").innerHTML = "YOU HAVE SELECTED: " + x.options[x.selectedIndex].text + " TO DIE!";
+    if (x.options[x.selectedIndex].value == "Vayne"){
+     document.getElementById("loadADgraph").innerHTML = "Your target has 1909.44 health at level 18 and 76.812 armor."
+    } else if (x.options[x.selectedIndex].value == "Kalista"){
+     document.getElementById("loadADgraph").innerHTML = "Your target has 1928.76 health at level 18 and 78.512 armor."
+    } else if (x.options[x.selectedIndex].value == "Graves"){
+     document.getElementById("loadADgraph").innerHTML = "Your target has 1979.12 health at level 18 and 78.716 armor."
+    } else if (x.options[x.selectedIndex].value == "Ashe"){
+     document.getElementById("loadADgraph").innerHTML = "Your target has 170.72 health at level 18 and 79.012 armor."
+    } else if (x == "Jinx"){
+     document.getElementById("loadADgraph").innerHTML = "Your target has 1911.76 health at level 18 and 82.38 armor."
+    } else if (x.options[x.selectedIndex].value == "Tristana"){
+     document.getElementById("loadADgraph").innerHTML = "Your target has 1936.76 health at level 18 and 73 armor."
+    } else if (x.options[x.selectedIndex].value == "Sivir"){
+     document.getElementById("loadADgraph").innerHTML = "Your target has 1909.76 health at level 18 and 77.46 armor."
+    } else if (x.options[x.selectedIndex].value == "Corki"){
+     document.getElementById("loadADgraph").innerHTML = "Your target has 1906.76 health at level 18 and 82.88 armor."
+    }
+        
 }
 </script>
 
 
 <! this is for ad items>
-<h1 id="ADItemsTitle"><u>Select Your Items</u></h1>
-<select id="ADItems" onchange="changeADItems()" >
-    <option value = "B.F Sword">B.F. Sword</option>
-    <option value = "Bilgewater Cutlass">Bilgewater Cutlass</option>
-    <option value = "Doran's Blade">Doran's Blade</option>
-    <option value = "Elixir of Wrath">Elixir of Wrath</option>
-    <option value = "Entropy">Entropy</option>
-    <option value = "Essence Reaver">Essence Reaver</option>
-    <option value = "Frozen Mallet">Frozen Mallet</option>
-    <option value = "Guinsoo's Rageblade">Guinsoo's Rageblade</option>
-    <option value = "Hexdrinker">Hexdrinker</option>
-    <option value = "Hextech Gunblade">Hextech Gunblade</option>
-    <option value = "Infinity Edge">Infinity Edge</option>
-    <option value = "Last Whisper">Last Whisper</option>
-    <option value = "Long Sword">Long Sword</option>
-    <option value = "Manamune">Manamune</option>
-    <option value = "Maw of Malmortius">Maw of Malmortius</option>
-    <option value = "Mercurial Scimitar">Mercurial Scimitar</option>
-    <option value = "Phage">Phage</option>
-    <option value = "Pickaxxe">Pickaxe</option>
-    <option value = "Ravenous Hydra">Ravenous Hydra</option>
-    <option value = "Sword of the Occult">Sword of the Occult (max stacks)</option>
-    <option value = "The Black Cleaver">The Black Cleaver</option>
-    <option value = "The Bloodthirster">The Bloodthirster</option>
-    <option value = "Tiamat">Tiamat</option>
-    <option value="Trinity Force">Trinity Force</option>
-    <option value="Vampiric Scepter">Vampiric Scepter</option>
-    <option value="Warrior">Warrior</option>       
-    <option value="Youmuu's Ghostblade">Youmuu's Ghostblade</option>
-    <option value="Zeke's Herald">Zeke's Herald</option>
-    <option value="Zephyr">Zephyr</option>
-    <option value = "Robert's Salt Mine" selected>Robert's Salt Mine</option>
-</select>
+<h1  name="ADItemsTitle" id="ADItemsTitle"><u>Select Your Items</u></h1>
+<form id="ADItems" onchange="changeADItems()" multiple="multiple" size="30">
+    <input type="checkbox" id="AD Item" value = "B.F Sword">B.F. Sword
+    <br>
+    <input type="checkbox" id="AD Item"  value = "Bilgewater Cutlass">Bilgewater Cutlass
+    <br>
+    <input type="checkbox" id="AD Item"  value = "Doran's Blade">Doran's Blade
+    <br>
+    <input type="checkbox" id="AD Item"  value = "Elixir of Wrath">Elixir of Wrath
+    <br>
+    <input type="checkbox" id="AD Item"  value = "Entropy">Entropy
+    <br>
+    <input type="checkbox" id="AD Item"  value = "Essence Reaver">Essence Reaver
+    <br>
+    <input type="checkbox" id="AD Item" value = "Frozen Mallet">Frozen Mallet
+    <br>
+    <input type="checkbox" id="AD Item" value = "Guinsoo's Rageblade">Guinsoo's Rageblade
+    <br>
+    <input type="checkbox" id="AD Item"  value = "Hexdrinker">Hexdrinker
+    <br>
+    <input type="checkbox" id="AD Item" value = "Hextech Gunblade">Hextech Gunblade
+<br>
+    <input type="checkbox" id="AD Item" value = "Infinity Edge">Infinity Edge
+    <br>
+    <input type="checkbox" id="AD Item" value = "Last Whisper">Last Whisper
+    <br>
+    <input type="checkbox" id="AD Item" value = "Long Sword">Long Sword
+    <br>
+    <input type="checkbox" id="AD Item" value = "Manamune">Manamune
+    <br>
+    <input type="checkbox" id="AD Item" value = "Maw of Malmortius">Maw of Malmortius
+    <br>
+    <input type="checkbox" id="AD Item" value = "Mercurial Scimitar">Mercurial Scimitar
+    <br>
+    <input type="checkbox" id="AD Item" value = "Phage">Phage
+    <br>
+    <input type="checkbox" id="AD Item" value = "Pickaxe">Pickaxe
+    <br>
+    <input type="checkbox" id="AD Item" value = "Ravenous Hydra">Ravenous Hydra
+    <br>
+    <input type="checkbox" id="AD Item" value = "Sword of the Occult">Sword of the Occult (max stacks)
+    <br>
+    <input type="checkbox" id="AD Item" value = "The Black Cleaver">The Black Cleaver
+    <br>
+    <input type="checkbox" id="AD Item" value = "The Bloodthirster">The Bloodthirster
+    <br>
+    <input type="checkbox" id="AD Item" value = "Tiamat">Tiamat
+    <br>
+    <input type="checkbox" id="AD Item" value="Trinity Force">Trinity Force
+    <br>
+    <input type="checkbox" id="AD Item" value="Vampiric Scepter">Vampiric Scepter
+    <br>
+    <input type="checkbox" id="AD Item" value="Warrior">Warrior  
+    <br>
+    <input type="checkbox" id="AD Item" value="Youmuu's Ghostblade">Youmuu's Ghostblade
+    <br>
+    <input type="checkbox" id="AD Item" value="Zeke's Herald">Zeke's Herald
+    <br>
+    <input type="checkbox" id="AD Item" value="Zephyr">Zephyr
+    <br>
+    <input type="checkbox" id="AD Item" value = "Robert's Salt Mine" >Robert's Salt Mine
+    <br>
+
+</form>
 
 <p id="ADstats" font-size:20px></p>
 <script>
 function changeADItems() {
-    var x = document.getElementById("ADItems").value ;
-    document.getElementById("ADstats").innerHTML = "You have selected:"+  x;
+    var x = document.getElementById("AD Item") ;
+    var selectedArray = new Array() ;
+    var y = document.getElementById("AD Item") ;
+    var count = 0 ;
+    for (int i = 0; i < y.options.length; i++)
+    {
+        if (y.options[i].selected)
+        {
+            selectedArray[count] = y.options[i].value ;
+            count++ ;
+        }
+    }
+    x.value = selectedArray ;
+    document.getElementById("ADstats").innerHTML = "You have selected: " + x ;
 }
+                                                    
+                                                                
 </script>
 
-<! this is where you input rengar and the enemys level>
-<h1 id="selectLevelTitle"><u>Select Your and the ADC's Level</u></h1>
+
+<h1 id="calculations"><u>Calculations</u></h1>
+<p id="loadADgraph" font-size:20px> </p>
 
 
+</body>
 
 
 
